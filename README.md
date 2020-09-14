@@ -1,2 +1,2 @@
-# OlaMundo
- Primeiro repositorio versionado
+# Olá Mundo
+ Primeiro repositório versionado, aprendendo a usar GitHub
