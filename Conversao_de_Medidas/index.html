@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hugo Barbosa da Silva">
+    <link rel="icon" href="foto/icon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversão de medidas</title>
+</head>
+<body>
+    <main class="converte">
+        <article div class="secao">
+            <h1>Conversão de medidas</h1>
+            <form action="conversao.php" method="post">
+                <label>Escolhe a unidade de medida: </label>
+                    <select name="valor" id="valor">
+                        <option value="0">Milímetros</option>
+                        <option value="1">Centímetros</option>
+                        <option value="2">Metros</option>
+                        <option value="3">Kilômetros</option>
+                    </select>
+                <label>Digite um valor: </label>
+                <input type="number" name="num1" id="num1" min="0" required>
+                <br>
+                <label>O valor será convertido em: </label>
+                    <select name="converter" id="converter">
+                        <option value="0">Milímetros</option>
+                        <option value="1">Centímetros</option>
+                        <option value="2">Metros</option>
+                        <option value="3">Kilômetros</option>
+                    </select>
+                <button type="submit">CONVERTER</button>
+            </form>
+        </article>
+    </main>
+</body>
+</html>
