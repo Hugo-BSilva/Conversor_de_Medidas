@@ -15,5 +15,3 @@ __*Aprendendo Markdown*__ 🎓
 - [x] Postar primeiro repositório
 - [ ] Melhorar o Código
 - [ ] Aprimorar a interface
-
-![Meu Twitter]( )
