@@ -1,5 +1,17 @@
 # Olá Mundo 🌍
 ## Programinha: Conversão de Medidas 💻
+__*Funções e Objetivos:*__
+Optei por fazer de forma simples, trabalhando apenas com a <br> 
+estrutura de condição switch case. A função do programa é converter <br>
+a unidade de medida na qual o usuário escolher, isso é: <br>
+O primeiro select é responsável pela unidade de entrada <br>
+O segundo select vai converter a unidade de entrada em :
+
+Milímetro | Centímetro | Metro | Kilômetro 
+---|---|---|---
+10mm = 1cm | 100cm = 1m | 1000m = 1km | 1 km 
+
+
 ***
 __*Aprendendo Markdown*__ 🎓
 
@@ -10,9 +22,6 @@ __*Aprendendo Markdown*__ 🎓
 1. JavaScript
 1. Markdown 
 
-HTML5 | CSS3 | PHP 
----|---|---
-Intermediário | Intermediário | Intermediário
 
 Terminou a tabela
 
