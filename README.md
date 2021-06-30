@@ -35,6 +35,7 @@ Terminou a tabela
 [Twitter](https://twitter.com/09silvahugo) <br>
 [Facebook](https://www.facebook.com/hugo.silva.5423/) <br>
 [LinkedIn](https://www.linkedin.com/in/hugo-barbosa-a3b40a157/)
+[Digital Innovation One](https://web.digitalinnovation.one/users/09silvahugo?tab=achievements)
 
 `<?php echo "Olá mundo github"; ?>`
 ***
