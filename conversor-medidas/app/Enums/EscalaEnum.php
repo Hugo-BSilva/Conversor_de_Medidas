@@ -12,10 +12,10 @@ class EscalaEnum
     public static function getAll()
     {
         return [
-            self::MILIMETRO,
-            self::CENTIMETRO,
-            self::METRO,
-            self::QUILOMETRO,
+            0 => self::MILIMETRO,
+            1 => self::CENTIMETRO,
+            2 => self::METRO,
+            3 => self::QUILOMETRO,
         ];
     }
 }

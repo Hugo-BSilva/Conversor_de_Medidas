@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\ConversaoService;
+use App\Enums\UnidadeEnum;
+use App\Enums\EscalaEnum;
 
 class ConversaoController extends Controller
 {
@@ -16,27 +18,40 @@ class ConversaoController extends Controller
 
     public function index()
     {
-        return view('conversor');
+        $unidades = UnidadeEnum::getAll();
+
+        return view('conversao.index', compact('unidades'));
     }
 
     public function converter(Request $request)
     {
-        $dados = $request->validate([
-            'valor' => 'required|numeric',
-            'origem' => 'required|string',
-            'destino' => 'required|string',
-        ]);
+        $request->validate(
+            [
+                'valor' => 'required|numeric|min:0.000001',
+            ],
+            [
+                'valor.required' => 'Você precisa digitar um valor.',
+                'valor.numeric' => 'O valor deve ser numérico.',
+                'valor.min' => 'O valor deve ser maior que zero.',
+            ]);
 
-        try {
-            $resultado = $this->conversaoService->converter(
-                $dados['origem'],
-                $dados['destino'],
-                $dados['valor']
-            );
+        $valor = (float) str_replace(',', '.', $request->input('valor'));
+        $origem = (int) $request->input('unidadeOrigem');
+        $destino = (int) $request->input('unidadeDestino');
 
-            return back()->with('resultado', $resultado);
-        } catch (\Exception $e) {
-            return back()->withErrors($e->getMessage());
+        if ($origem === $destino) {
+            return back()->with('erro', 'Unidades iguais! Escolha unidades diferentes.');
         }
+
+        if ($valor <= 0) {
+            return back()->with('erro', 'Valor deve ser maior que zero.');
+        }
+
+        $valorConvertido = $this->conversaoService->converter($origem, $destino, $valor);
+
+        $resultado = number_format($valorConvertido, 0, ',', '.');
+
+        return redirect('/')
+            ->with('resultado', "{$valor} " . UnidadeEnum::getAll()[$origem] . " = {$resultado} " . UnidadeEnum::getAll()[$destino]);
     }
 }
